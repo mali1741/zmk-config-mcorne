@@ -13,11 +13,11 @@
     behaviors {
         ht: hold_tap_standard {
             compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_ROW";
+            label = "HOLD_TAP_STANDARD";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <200>;
-            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
 
@@ -25,8 +25,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "CUSTOM_LAYER_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
@@ -68,9 +68,9 @@
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &kp TAB      &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp LBKT
-   &mt LALT ESC &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &mt LSFT GT  &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &mt RSFT NUHS
-                              &kp LCTRL &lt 1 DEL &kp SPACE  &lt 3 RET &lt 2 BSPC &mt RALT DEL
+   &ht LALT ESC &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
+   &ht LSFT GT  &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &ht RSFT NUHS
+                              &kp LCTRL &ly 1 DEL &kp SPACE  &ly 3 RET &ly 2 BSPC &ht RALT DEL
                         >;
                 };
 
@@ -82,7 +82,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp GRAVE      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8    &kp F9       &tdfn     &kp LS(EQUAL)
-   &mt LALT N0    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8    &kp N9       &kp N0    &kp MINUS
+   &ht LALT N0    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8    &kp N9       &kp N0    &kp MINUS
    &kp LSFT       &trans       &trans       &trans       &trans       &trans         &none    &none    &kp NUBS  &kp LS(NUBS) &kp UNDER &kp AT
                           	            &kp LCTRL    &trans       &kp SPACE      &trans  &trans   &kp RCTRL
                         >;
@@ -96,7 +96,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &caps_word   &kp C_MUTE &kp RA(N2) &none    &kp PSCRN  &kp LS(F5)  &kp LS(RBKT)  &none     &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &kp RA(RBKT)
-   &mt LALT ESC &kp EXCL   &kp AT     &kp HASH &kp DLLR   &kp PRCNT   &kp CARET     &kp AMPS  &kp LS(N8)  &kp LS(N9)  &kp EQUAL     &kp LS(N0)
+   &ht LALT ESC &kp EXCL   &kp AT     &kp HASH &kp DLLR   &kp PRCNT   &kp CARET     &kp AMPS  &kp LS(N8)  &kp LS(N9)  &kp EQUAL     &kp LS(N0)
    &kp RA(NUBS) &trans     &trans     &trans   &trans     &trans      &kp UNDER     &kp PLUS  &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &kp LS(NUHS)
                     	              &kp LCTRL &trans  &kp SPACE     &trans   &trans    &kp RALT
                         >;
@@ -126,7 +126,7 @@
    &tdte     &kp Q &kp W &kp E &kp R &ht T RET  &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBKT
    &kp GRAVE &kp A &kp S &kp D &kp F &kp G      &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSFT  &kp Z &kp X &kp C &kp N &ht B H    &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSFT
-                   &kp LCTRL &kp V &kp SPACE    &lt 3 RET &kp BSPC &kp DEL
+                   &kp LCTRL &kp V &kp SPACE    &tog 4 &kp BSPC &kp DEL
                         >;
                 };
     };
