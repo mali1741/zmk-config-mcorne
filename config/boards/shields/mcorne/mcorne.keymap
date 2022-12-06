@@ -9,7 +9,27 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    macros {
 
+    ZMK_MACRO(se_tilde,
+        wait-ms = <30>;
+        tap-ms = <40>;
+        bindings = <&kp RA(RBKT) &kp SPACE>;
+    )
+
+    ZMK_MACRO(se_tick,
+        wait-ms = <30>;
+        tap-ms = <40>;
+        bindings = <&kp LS(EQUAL) &kp SPACE>;
+    )
+
+    ZMK_MACRO(se_circ,
+        wait-ms = <30>;
+        tap-ms = <40>;
+        bindings = <&kp LS(RBKT) &kp SPACE>;
+    )
+ 
+    };
     behaviors {
         ht: hold_tap_standard {
             compatible = "zmk,behavior-hold-tap";
@@ -81,7 +101,7 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp GRAVE      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8    &kp F9       &tdfn     &kp LS(EQUAL)
+   &kp GRAVE      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8    &kp F9       &tdfn     &se_tick
    &ht LALT N0    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8    &kp N9       &kp N0    &kp MINUS
    &kp LSFT       &trans       &trans       &trans       &trans       &trans         &none    &none    &kp NUBS  &kp LS(NUBS) &kp UNDER &kp AT
                           	            &kp LCTRL    &trans       &kp SPACE      &trans  &trans   &kp RCTRL
@@ -95,7 +115,7 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &caps_word   &kp C_MUTE &kp RA(N2) &none    &kp PSCRN  &kp LS(F5)  &kp LS(RBKT)  &none     &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &kp RA(RBKT)
+   &caps_word   &kp C_MUTE &kp RA(N2) &none    &kp PSCRN  &kp LS(F5)  &se_circ      &none     &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &se_tilde
    &ht LALT ESC &kp EXCL   &kp AT     &kp HASH &kp DLLR   &kp PRCNT   &kp CARET     &kp AMPS  &kp LS(N8)  &kp LS(N9)  &kp EQUAL     &kp LS(N0)
    &kp RA(NUBS) &trans     &trans     &trans   &trans     &trans      &kp UNDER     &kp PLUS  &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &kp LS(NUHS)
                     	              &kp LCTRL &trans  &kp SPACE     &trans   &trans    &kp RALT
