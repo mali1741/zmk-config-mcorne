@@ -11,37 +11,7 @@
 / {
 
     behaviors {
-        ht: hold_tap_mods_standard {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP_TAP_PREF";
-            #binding-cells = <2>;
-            tapping-term-ms = <160>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        lp: hold_tap_left_pinky {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LEFT_PINKY";
-            #binding-cells = <2>;
-            tapping-term-ms = <185>;
-            quick-tap-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        rp: hold_tap_right_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RIGHT_PINKY";
-            #binding-cells = <2>;
-            tapping-term-ms = <135>;
-            quick-tap-ms = <200>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-        };
-
-        thm: thumb_row_mods {
+        ht: hold_tap_standard {
             compatible = "zmk,behavior-hold-tap";
             label = "THUMB_ROW";
             #binding-cells = <2>;
@@ -61,7 +31,7 @@
             bindings = <&mo>, <&kp>;
         };
 
-        td1: tap_dance {
+        td1: tap_dance1 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_1";
             #binding-cells = <0>;
@@ -69,7 +39,7 @@
             bindings = <&sl 1>, <&tog 1>;
         };
 
-        tdte: tap_dance {
+        tdte: tap_dance2 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_2";
             #binding-cells = <0>;
@@ -77,7 +47,7 @@
             bindings = <&kp TAB>, <&kp ESC>;
         };
 
-        tdfn: tap_dance {
+        tdfn: tap_dance3 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_3";
             #binding-cells = <0>;
@@ -100,7 +70,7 @@
    &kp TAB      &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp LBKT
    &mt LALT ESC &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
    &mt LSFT GT  &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &mt RSFT NUHS
-                              &kp LCTRL &ly 1 DEL &kp SPACE  &ly 3 RET &ly 2 BSPC &rp RALT DEL
+                              &kp LCTRL &lt 1 DEL &kp SPACE  &lt 3 RET &lt 2 BSPC &mt RALT DEL
                         >;
                 };
 
@@ -156,7 +126,7 @@
    &tdte     &kp Q &kp W &kp E &kp R &ht T RET  &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBKT
    &kp GRAVE &kp A &kp S &kp D &kp F &kp G      &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSFT  &kp Z &kp X &kp C &kp N &ht B H    &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSFT
-                   &kp LCTRL &kp V &kp SPACE    &trans &kp BSPC &kp RALT
+                   &kp LCTRL &kp V &kp SPACE    &lt 3 RET &kp BSPC &kp DEL
                         >;
                 };
     };
