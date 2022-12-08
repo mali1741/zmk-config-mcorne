@@ -31,13 +31,14 @@
  
     };
     behaviors {
-        tu: hold_tap_unless {
+        tu: hold_tap_repeat {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_STANDARD";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            global-quick-tap;
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
 
@@ -47,7 +48,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            flavor = "tap-preferred";
+            flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
         };
 
@@ -55,8 +56,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "CUSTOM_LAYER_TAP";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <175>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
@@ -99,7 +100,7 @@
                         bindings = <
    &kp TAB      &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp LBKT
    &tu LALT ESC &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &tu LSFT GT  &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &tu RSFT NUHS
+   &ht LSFT GT  &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &tu RSFT NUHS
                             &ly LCTRL TAB &ly 1 DEL &tu LSFT SPACE  &ly 3 RET &ly 2 BSPC &tu RALT DEL
                         >;
                 };
@@ -113,8 +114,8 @@
                         bindings = <
    &kp GRAVE      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8    &kp F9       &tdfn     &se_tick
    &tu LALT N0    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8    &kp N9       &kp N0    &kp MINUS
-   &kp LSFT       &trans       &trans       &trans       &trans       &trans         &none    &none    &kp NUBS  &kp LS(NUBS) &kp UNDER &kp AT
-                          	            &kp LCTRL    &trans       &trans         &trans  &trans   &kp RCTRL
+   &kp LSFT       &trans       &trans       &trans       &trans       &trans         &kp DEL  &kp F    &kp NUBS  &kp LS(NUBS) &kp UNDER &kp AT
+                                            &kp LCTRL    &trans       &trans         &trans   &trans   &kp RCTRL
                         >;
                 };
 
@@ -125,9 +126,9 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &caps_word   &kp C_MUTE &kp RA(N2) &none    &kp PSCRN  &kp LS(F5)  &se_circ      &none     &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &se_tilde
-   &tu LALT ESC &kp EXCL   &kp AT     &kp HASH &kp DLLR   &kp PRCNT   &kp CARET     &kp AMPS  &kp LS(N8)  &kp LS(N9)  &kp EQUAL     &kp LS(N0)
-   &kp RA(NUBS) &trans     &trans     &trans   &trans     &trans      &kp UNDER     &kp PLUS  &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &kp LS(NUHS)
+   &caps_word   &kp C_MUTE &kp RA(N2) &none    &kp PSCRN  &kp LS(F5)  &se_circ      &kp RA(NUBS) &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &se_tilde
+   &tu LALT ESC &kp EXCL   &kp AT     &kp HASH &kp DLLR   &kp PRCNT   &kp CARET     &kp AMPS     &kp LS(N8)  &kp LS(N9)  &kp EQUAL     &kp LS(N0)
+   &kp RA(NUBS) &trans     &trans     &trans   &trans     &trans      &kp UNDER     &kp PLUS     &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &kp LS(NUHS)
                     	              &kp LCTRL &trans    &trans      &trans   &trans    &kp RALT
                         >;
                 };
@@ -139,9 +140,9 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &kp LC(F5)     &none  &kp HOME &kp UP   &kp END   &none    &none
-   &kp LALT   &none        &none        &none        &kp LC(LS(T)) &tog 4         &none  &kp LEFT &kp DOWN &kp RIGHT &none    &none
-   &kp LSFT   &trans       &trans       &trans       &trans        &trans         &none  &kp PGDN &kp PGUP &none     &kp RSFT &kp RSFT 
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &kp LC(F5)     &kp PGUP &kp HOME &kp UP   &kp END   &none    &none
+   &kp LALT   &none        &none        &none        &kp LC(LS(T)) &tog 4         &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RSFT &none
+   &kp LSFT   &trans       &trans       &trans       &trans        &trans         &none    &none    &none    &none     &none    &none 
                           	        &kp LCTRL    &trans        &trans         &trans &trans   &trans
                         >;
                 };
