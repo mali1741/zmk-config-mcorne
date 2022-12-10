@@ -114,7 +114,7 @@
                         bindings = <
    &kp GRAVE      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8    &kp F9       &tdfn     &se_tick
    &tu LALT N0    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8    &kp N9       &kp N0    &kp MINUS
-   &kp LSFT       &trans       &trans       &trans       &trans       &trans         &kp DEL  &kp F    &kp NUBS  &kp LS(NUBS) &kp UNDER &kp AT
+   &ht LSFT LT    &trans       &trans       &trans       &trans       &trans         &kp DEL  &kp F    &kp NUBS  &kp LS(NUBS) &kp UNDER &kp AT
                                             &kp LCTRL    &trans       &trans         &trans   &trans   &kp RCTRL
                         >;
                 };
@@ -126,10 +126,10 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &caps_word   &kp C_MUTE &kp RA(N2) &none    &kp PSCRN  &kp LS(F5)  &se_circ      &kp RA(NUBS) &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &se_tilde
-   &tu LALT ESC &kp EXCL   &kp AT     &kp HASH &kp DLLR   &kp PRCNT   &kp CARET     &kp AMPS     &kp LS(N8)  &kp LS(N9)  &kp EQUAL     &kp LS(N0)
-   &kp RA(NUBS) &trans     &trans     &trans   &trans     &trans      &kp RA(NUBS)  &kp PLUS     &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &kp LS(NUHS)
-                    	              &kp LCTRL &trans    &trans      &trans   &trans    &kp RALT
+   &caps_word   &kp C_MUTE &kp RA(N2) &none    &kp PSCRN  &kp LS(F5)  &se_circ      &kp EQUAL  &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &se_tilde
+   &tu LALT ESC &kp EXCL   &kp AT     &kp HASH &kp DLLR   &kp PRCNT   &kp CARET     &kp AMPS   &kp LS(N8)  &kp LS(N9)  &kp RA(NUBS)  &kp LS(N0)
+   &kp RA(NUBS) &trans     &trans     &trans   &trans     &trans      &kp RA(NUBS)  &kp PLUS   &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &kp LS(NUHS)
+                                      &kp LCTRL &trans    &trans      &trans        &trans     &key_repeat
                         >;
                 };
 
