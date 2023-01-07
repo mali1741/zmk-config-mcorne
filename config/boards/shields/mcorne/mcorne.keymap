@@ -163,14 +163,14 @@
 
                 sweep_lower_layer {
 // -----------------------------------------------------------------------------------------
-// |    | F1  | F2 | F3 |  F4 |  F5 |   | F6 | F7 | F8 |  F9 | F10+ |     |      |
+// |    | F1  | F2 | F3 |  F4 |  F5 |   | F6 | F7 | F8 |  F9 | F10+ |     |     
 // |    | A/1 |  2 |  3 |   4 |   5 |   |  6 |  7 |  8 |   9 |  0   |     |
 // |    | S-0 |    |    |     |     |   |    |  # |  < |   > |  ?   |     |
 //                 |    | +++ | SPC |   | ENT | RSE |     |
                         bindings = <
    &none &kp F1          &kp F2    &kp F3    &kp F4    &kp F5         &kp F6   &kp F7    &kp F8    &kp F9       &tdfn        &none
    &none &tu LALT N1     &kp N2    &kp N3    &kp N4    &kp N5         &kp N6   &kp N7    &kp N8    &kp N9       &kp N0       &none
-   &none &kp LSFT N0     &none     &none     &none     &none          &none    &none     &kp NUBS  &kp LS(NUBS) &kp UNDER    &none
+   &none &tu LSFT N0     &none     &none     &none     &none          &none    &none     &kp NUBS  &kp LS(NUBS) &kp UNDER    &none
                                    &none     &trans    &trans         &trans   &trans   &none
                         >;
                 };
