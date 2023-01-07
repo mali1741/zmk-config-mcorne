@@ -98,9 +98,9 @@
 // | SH/: |  Z  |  X  |  C  |  V  |  B  |   |  K  |  H   |  ,  |  .  |  -  | SH/' |
 //                    | CTL | LWR | SPC |   | ENT | RSE  | GUI/DEL |
                         bindings = <
-   &kp TAB      &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp LBKT
-   &tu LALT ESC &kp A &kp R &kp S &kp T &kp G        &kp M &kp N  &kp E     &kp I   &kp O    &kp SQT
-   &ht LSFT GT  &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &tu RSFT NUHS
+   &se_tilde    &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L  &kp U     &kp Y   &kp LBKT &kp EQUAL
+   &tu LALT ESC &kp A &kp R &kp S &kp T &kp G        &kp M &kp N  &kp E     &kp I   &kp O    &kp COMMA
+   &ht LSFT GT  &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H  &kp SQT   &kp DOT &kp SEMI &tu RSFT FSLH
            &kp LCTRL &ly 1 TAB &tu LSFT SPACE        &ly 3 RET &ly 2 BSPC &tu LGUI DEL
                         >;
                 };
@@ -112,9 +112,9 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | CTL |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp GRAVE      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8    &kp F9       &tdfn     &se_tick
+   &se_tick       &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8    &kp F9       &tdfn     &kp PLUS
    &tu LALT N0    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8    &kp N9       &kp N0    &kp MINUS
-   &ht LSFT LT    &trans       &trans       &trans       &trans       &trans         &kp INS  &kp DEL  &kp NUBS  &kp LS(NUBS) &kp UNDER &kp AT
+   &ht LSFT LT    &trans       &trans       &trans       &trans       &trans         &kp DEL  &none    &kp NUBS  &kp LS(NUBS) &kp UNDER &kp QMARK
                                             &kp LCTRL    &trans       &trans         &trans   &trans   &kp RCTRL
                         >;
                 };
@@ -126,10 +126,10 @@
 // | CW   |  Z  |  X  |  C  |  D  |  V   |   |  |  |  `  |  [  |  ]  |  /  |  *   |
 //                    | CTL | LWR | SSPC |   | ENT | RSE | ALT |
                         bindings = <
-   &kp LS(TAB)  &kp C_MUTE &kp RA(N2) &kp RC(F) &kp PSCRN  &kp LS(F5)     &se_circ      &kp EQUAL  &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &se_tilde
-   &tu LALT ESC &kp EXCL   &kp AT     &kp HASH  &kp RA(N4) &kp PRCNT      &kp CARET     &kp AMPS   &kp LS(N8)  &kp LS(N9)  &kp RA(NUBS)  &kp LS(N0)
-   &caps_word   &trans     &trans     &trans    &trans     &trans         &kp RA(NUBS)  &kp PLUS   &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &kp LS(NUHS)
-                                      &kp LCTRL &trans     &trans         &trans        &trans     &key_repeat
+   &kp LS(TAB)  &kp C_MUTE &kp RA(N2)   &kp RC(F) &kp PSCRN    &kp LS(F5)     &se_circ      &kp MINUS  &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &kp GRAVE
+   &tu LALT ESC &kp EXCL   &kp AT       &kp HASH  &kp RA(N4)   &kp PRCNT      &kp CARET     &kp LS(N0) &kp LS(N8)  &kp LS(N9)  &kp RA(NUBS)  &kp LS(N0)
+   &caps_word   &trans     &kp NUHS     &kp COMMA &kp LS(NUHS) &kp GRAVE      &se_tilde     &kp FSLH   &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &kp LS(NUHS)
+                                        &kp LCTRL &trans     &trans           &trans        &trans     &key_repeat
                         >;
                 };
 
@@ -141,9 +141,9 @@
 //                    | GUI |     | SPC |   | ENT |     | RPT |
                         bindings = <
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &kp LC(F5)     &none    &none    &none    &none     &none     &none
-   &kp LALT   &none        &none        &to 4        &kp LC(LS(T)) &to 8          &none    &kp LEFT &kp DOWN &kp UP    &kp RIGHT &none
-   &kp LSFT   &trans       &trans       &trans       &trans        &trans         &none    &kp HOME &kp PGDN &kp PGUP  &kp END   &kp RSFT 
-                                        &kp LCTRL    &kp TAB       &trans         &trans   &kp BSPC  &key_repeat
+   &kp LALT   &none        &none        &to 4        &kp LC(LS(T)) &to 8          &none    &kp LEFT &kp DOWN &kp UP   &kp RIGHT &kp RSFT
+   &kp LSFT   &trans       &trans       &trans       &trans        &trans         &none    &kp HOME &kp PGDN &kp PGUP &kp END   &kp RSFT
+                                        &kp LCTRL    &kp TAB       &trans         &trans   &kp DEL  &key_repeat
                         >;
                 };
 
@@ -154,52 +154,52 @@
 // |    | C/Z |  X  |  C  |  V  |  B  |   |  K  |  H   |  ,  |  .  |  G/-  |     |
 //                    |   | LWR | SPC |   | ENT | RSE  |     |
                         bindings = <
-   &none &kp Q       &kp W &kp F &kp P &kp B         &kp J &kp L  &kp U     &kp Y   &tu LBKT SEMI &none
-   &none &tu LALT A  &kp R &kp S &kp T &kp G         &kp M &kp N  &kp E     &kp I   &tu SQT  O    &none
-   &none &tu LCTRL Z &kp X &kp C &kp D &kp V         &kp K &kp H  &kp COMMA &kp DOT &tu LGUI FSLH &none
-             &none   &ly 5 ESC   &tu LSFT SPACE   &ly 7 RET &ly 6 BSPC &none
+   &none &kp Q       &kp W &kp F &kp P &kp B         &kp J &kp L  &kp U    &kp Y   &kp LBKT      &none
+   &none &tu LALT A  &kp R &kp S &kp T &kp G         &kp M &kp N  &kp E    &kp I   &tu LGUI O    &none
+   &none &tu LSFT Z  &kp X &kp C &kp D &kp V         &kp K &kp H  &tu SQT  &kp DOT &tu RSFT SEMI &none
+             &none   &ly 5 TAB   &tu LCTRL SPACE     &ly 7 RET &ly 6 BSPC &none
                         >;
                 };
 
                 sweep_lower_layer {
 // -----------------------------------------------------------------------------------------
-// |    | F1  | F2 | F3 | F4 | F5 |   | F6 | F7 | F8 |  F9 | F10+ |     |      |
-// |    | A/1 |  2 |  3 |  4 |  5 |   |  6 |  7 |  8 |  9  |  0   |     |
-// |    |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    |   | LWR | SPC |   | ENT | RSE |     |
+// |    | F1  | F2 | F3 |  F4 |  F5 |   | F6 | F7 | F8 |  F9 | F10+ |     |      |
+// |    | A/1 |  2 |  3 |   4 |   5 |   |  6 |  7 |  8 |   9 |  0   |     |
+// |    | S-0 |    |    |     |     |   |    |  # |  < |   > |  ?   |     |
+//                 |    | +++ | SPC |   | ENT | RSE |     |
                         bindings = <
    &none &kp F1          &kp F2    &kp F3    &kp F4    &kp F5         &kp F6   &kp F7    &kp F8    &kp F9       &tdfn        &none
    &none &tu LALT N1     &kp N2    &kp N3    &kp N4    &kp N5         &kp N6   &kp N7    &kp N8    &kp N9       &kp N0       &none
-   &none &ht LCTRL LC(Z) &kp LC(X) &kp LC(C) &kp LC(D) &kp LC(V)      &none    &kp DEL   &kp NUBS  &kp LS(NUBS) &kp UNDER    &none
+   &none &kp LSFT N0     &none     &none     &none     &none          &none    &none     &kp NUBS  &kp LS(NUBS) &kp UNDER    &none
                                    &none     &trans    &trans         &trans   &trans   &none
                         >;
                 };
 
                 sweep_raise_layer {
 // -----------------------------------------------------------------------------------------
-// |    | TAB |  @  | C-F | PSC | SF5  |   |  ^  |  +  |  {  |  }  |  \  |     |
-// |    | A/! |  "  |  #  |  $  |  %   |   |  &  |  =  |  (  |  )  |  |  |     |
-// |    | CW  |  '  |  C  |  D  |  V   |   |  ~  |  *  |  [  |  ]  |  /  |     |
+// |    |  @    |  `  |  %  |  ;  |  ?  |   |  ^  |  +  |  {  |  }  |  \  |     |
+// |    | A-ESC |  "  |  $  |  :  |  _  |   |  &  |  =  |  (  |  )  |  |  |     |
+// |    | CW    |  '  |  *  |  ,  |  !  |   |  ~  |  -  |  [  |  ]  |  /  |     |
 //                  |     | LWR | SSPC |   | ENT | RSE |     |
                         bindings = <
-   &none  &kp TAB       &kp RA(N2) &kp RC(F) &kp PSCRN  &kp LS(F5)      &se_circ     &kp MINUS    &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &none
-   &none  &tu LALT EXCL &kp AT     &kp HASH  &kp RA(N4) &kp PRCNT       &kp CARET    &kp LS(N0)   &kp LS(N8)  &kp LS(N9)  &kp RA(NUBS)  &none
-   &none  &caps_word    &kp NUHS   &trans    &trans     &trans          &se_tilde    &kp LS(NUHS) &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &none
-                                   &none     &trans     &trans          &trans       &trans   &none
+   &none  &kp RA(N2)    &se_tick   &kp PRCNT    &kp LT    &kp UNDER       &se_circ     &kp MINUS    &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &none
+   &none  &tu LALT ESC  &kp AT     &kp RA(N4)   &kp GT    &kp QMARK       &kp CARET    &kp LS(N0)   &kp LS(N8)  &kp LS(N9)  &kp RA(NUBS)  &none
+   &none  &kp LSFT      &kp NUHS   &kp LS(NUHS) &kp COMMA &kp EXCL        &se_tilde    &kp FSLH     &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &none
+                                   &none     &trans     &trans            &kp DEL      &trans   &none
                         >;
                 };
 
                 sweep_arrow_layer {
 // -----------------------------------------------------------------------------------------
-// |      | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     | LFT | DWN |  UP | RGT |      |
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | SHFT |     |     |     |     |     |   |     | HOM | PGD | PGU | END | RSFT |
-//                    | GUI |     | SPC |   | ENT |     | RPT |
+// |    | MAL | MAP | C-F | PSCR | S-F5 |   |     | M-L | M-D | M-U | M-R |     |
+// |    | A/A | M-2 | M-3 | M-1  | MAA  |   |  /  | LFT | DWN | UP  | RGT |     |
+// |    | S/Z |  X  |  C  |  D   |  V   |   |  #  | HOM | PGD | PGU | END |     |
+//                  |     | CTRL | SPC  |   | +++ | DEL |     |
                         bindings = <
-   &none &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3   &none    &none    &none    &none     &none     &none
-   &none &kp LALT   &none        &to 0        &kp LC(LS(T)) &to 8          &kp DEL  &kp LEFT &kp DOWN &kp UP    &kp RIGHT &none
-   &none &kp LCTRL  &trans       &trans       &trans        &trans         &none    &kp HOME &kp PGDN &kp PGUP  &kp END   &none
-                                     &none    &kp ESC       &trans         &trans   &kp BSPC &none
+   &none &none      &none        &kp RC(F)    &kp PSCRN     &kp LS(F5)     &none      &none    &none    &none     &none     &to 0
+   &none &kp LALT   &none        &none        &none         &none          &kp LS(N7) &kp LEFT &kp DOWN &kp UP    &kp RIGHT &none     
+   &none &trans     &trans       &trans       &trans        &trans         &kp HASH   &kp HOME &kp PGDN &kp PGUP  &kp END   &none  
+                                     &none    &trans        &trans         &trans     &kp DEL &none
                         >;
                 };
 
