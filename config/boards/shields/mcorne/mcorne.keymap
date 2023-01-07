@@ -156,7 +156,7 @@
                         bindings = <
    &none &kp Q       &kp W &kp F &kp P &kp B         &kp J &kp L  &kp U    &kp Y   &kp LBKT      &none
    &none &tu LALT A  &kp R &kp S &kp T &kp G         &kp M &kp N  &kp E    &kp I   &tu LGUI O    &none
-   &none &tu LSFT Z  &kp X &kp C &kp D &kp V         &kp K &kp H  &tu SQT  &kp DOT &tu RSFT SEMI &none
+   &none &tu LSFT Z  &kp X &kp C &kp D &kp V         &kp K &kp H  &kp SQT  &kp DOT &tu RSFT SEMI &none
              &none   &ly 5 TAB   &tu LCTRL SPACE     &ly 7 RET &ly 6 BSPC &none
                         >;
                 };
