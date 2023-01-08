@@ -98,9 +98,9 @@
 // | SH/: |  Z  |  X  |  C  |  V  |  B  |   |  K  |  H   |  ,  |  .  |  -  | SH/' |
 //                    | CTL | LWR | SPC |   | ENT | RSE  | GUI/DEL |
                         bindings = <
-   &se_tilde    &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L  &kp U     &kp Y   &kp LBKT &kp EQUAL
-   &tu LALT ESC &kp A &kp R &kp S &kp T &kp G        &kp M &kp N  &kp E     &kp I   &kp O    &kp COMMA
-   &ht LSFT GT  &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H  &kp SQT   &kp DOT &kp SEMI &tu RSFT FSLH
+   &se_tilde    &kp Q &kp W &kp F &kp P &kp B        &kp J &kp L  &kp U     &kp Y   &kp UNDER &kp EQUAL
+   &tu LALT ESC &kp A &kp R &kp S &kp T &kp G        &kp M &kp N  &kp E     &kp I   &kp O     &kp LT
+   &ht LSFT GT  &kp Z &kp X &kp C &kp D &kp V        &kp K &kp H  &kp COMMA &kp DOT &kp FSLH  &kp RSFT 
            &kp LCTRL &ly 1 TAB &tu LSFT SPACE        &ly 3 RET &ly 2 BSPC &tu LGUI DEL
                         >;
                 };
@@ -114,7 +114,7 @@
                         bindings = <
    &se_tick       &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8    &kp F9       &tdfn     &kp PLUS
    &tu LALT N0    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8    &kp N9       &kp N0    &kp MINUS
-   &ht LSFT LT    &trans       &trans       &trans       &trans       &trans         &kp DEL  &none    &kp NUBS  &kp LS(NUBS) &kp UNDER &kp QMARK
+   &ht LSFT LT    &kp N0       &trans       &trans       &trans       &trans         &kp HASH  &none   &kp SQT   &kp LBKT     &kp SEMI &kp QMARK
                                             &kp LCTRL    &trans       &trans         &trans   &trans   &kp RCTRL
                         >;
                 };
@@ -126,9 +126,9 @@
 // | CW   |  Z  |  X  |  C  |  D  |  V   |   |  |  |  `  |  [  |  ]  |  /  |  *   |
 //                    | CTL | LWR | SSPC |   | ENT | RSE | ALT |
                         bindings = <
-   &kp LS(TAB)  &kp C_MUTE &kp RA(N2)   &kp RC(F) &kp PSCRN    &kp LS(F5)     &se_circ      &kp MINUS  &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &kp GRAVE
-   &tu LALT ESC &kp EXCL   &kp AT       &kp HASH  &kp RA(N4)   &kp PRCNT      &kp CARET     &kp LS(N0) &kp LS(N8)  &kp LS(N9)  &kp RA(NUBS)  &kp LS(N0)
-   &caps_word   &trans     &kp NUHS     &kp COMMA &kp LS(NUHS) &kp GRAVE      &se_tilde     &kp FSLH   &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &kp LS(NUHS)
+   &se_tilde  &se_tilde         &kp EXCL   &kp RA(N2)   &kp PRCNT  &none         &se_circ    &se_tick   &kp LS(NUHS) &kp MINUS   &kp RA(MINUS) &none
+   &none  &tu LALT ESC      &kp RA(N7) &kp RA(N0)   &kp GT     &kp QMARK     &kp LS(N7)  &kp AT     &kp RA(N8)   &kp RA(N9)  &kp LS(N0)    &none
+   &caps_word  &tu LSFT RA(NUBS) &kp NUBS   &kp LS(NUBS) &kp RA(N4) &kp LS(N6)    &kp HASH    &kp NUHS   &kp LS(N8)   &kp LS(N9)  &kp LT        &none
                                         &kp LCTRL &trans     &trans           &trans        &trans     &key_repeat
                         >;
                 };
@@ -149,14 +149,14 @@
 
                 sweep_layer {
 // -----------------------------------------------------------------------------------------
-// |    |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  Ö/Ä  |     |
-// |    |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O/Å  |     |
-// |    | C/Z |  X  |  C  |  V  |  B  |   |  K  |  H   |  ,  |  .  |  G/-  |     |
+// |    |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ?  |     |
+// |    |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |     |
+// |    | C/Z |  X  |  C  |  V  |  B  |   |  K  |  H   |  ,  |  .  |  -  |     |
 //                    |   | LWR | SPC |   | ENT | RSE  |     |
                         bindings = <
-   &none &kp Q       &kp W &kp F &kp P &kp B         &kp J &kp L  &kp U    &kp Y   &kp LBKT      &none
-   &none &tu LALT A  &kp R &kp S &kp T &kp G         &kp M &kp N  &kp E    &kp I   &tu LGUI O    &none
-   &none &tu LSFT Z  &kp X &kp C &kp D &kp V         &kp K &kp H  &kp SQT  &kp DOT &tu RSFT SEMI &none
+   &none &kp Q       &kp W &kp F &kp P &kp B         &kp J &kp L  &kp U     &kp Y   &kp UNDER     &none
+   &none &tu LALT A  &kp R &kp S &kp T &kp G         &kp M &kp N  &kp E     &kp I   &tu LGUI O    &none
+   &none &tu LSFT Z  &kp X &kp C &kp D &kp V         &kp K &kp H  &kp COMMA &kp DOT &tu RSFT FSLH &none
              &none   &ly 5 TAB   &tu LCTRL SPACE     &ly 7 RET &ly 6 BSPC &none
                         >;
                 };
@@ -165,27 +165,27 @@
 // -----------------------------------------------------------------------------------------
 // |    | F1  | F2 | F3 |  F4 |  F5 |   | F6 | F7 | F8 |  F9 | F10+ |     |     
 // |    | A/1 |  2 |  3 |   4 |   5 |   |  6 |  7 |  8 |   9 |  0   |     |
-// |    | S-0 |    |    |     |     |   |    |  # |  < |   > |  ?   |     |
+// |    | S-0 |    |    |     |     |   |  # |  ` |  Ä |   Å |  Ö   |     |
 //                 |    | +++ | SPC |   | ENT | RSE |     |
                         bindings = <
    &none &kp F1          &kp F2    &kp F3    &kp F4    &kp F5         &kp F6   &kp F7    &kp F8    &kp F9       &tdfn        &none
    &none &tu LALT N1     &kp N2    &kp N3    &kp N4    &kp N5         &kp N6   &kp N7    &kp N8    &kp N9       &kp N0       &none
-   &none &tu LSFT N0     &none     &none     &none     &none          &none    &none     &kp NUBS  &kp LS(NUBS) &kp UNDER    &none
+   &none &tu LSFT N0     &none     &none     &none     &none          &kp HASH &kp PLUS  &kp SQT   &kp LBKT     &kp SEMI     &none
                                    &none     &trans    &trans         &trans   &trans   &none
                         >;
                 };
 
                 sweep_raise_layer {
 // -----------------------------------------------------------------------------------------
-// |    |  @    |  `  |  %  |  ;  |  ?  |   |  ^  |  +  |  {  |  }  |  \  |     |
-// |    | A-ESC |  "  |  $  |  :  |  _  |   |  &  |  =  |  (  |  )  |  |  |     |
-// |    | CW    |  '  |  *  |  ,  |  !  |   |  ~  |  -  |  [  |  ]  |  /  |     |
-//                  |     | LWR | SSPC |   | ENT | RSE |     |
+// |    |  ~    |  !  |  @  |  %  |     |   |  ^  |  `  |  *  |  +  |  \  |     |
+// |    | A/ESC |  {  |  }  |  :  |  _  |   |  /  |  "  |  [  |  ]  |  =  |     |
+// |    | S/|   |  <  |  >  |  $  |  &  |   |  #  |  '  |  (  |  )  |  ;  |     |
+//                   |     | LWR | SSPC |   | ENT | RSE |     |
                         bindings = <
-   &none  &kp RA(N2)    &se_tick   &kp PRCNT    &kp LT    &kp UNDER       &se_circ     &kp MINUS    &kp RA(N7)  &kp RA(N0)  &kp RA(MINUS) &none
-   &none  &tu LALT ESC  &kp AT     &kp RA(N4)   &kp GT    &kp QMARK       &kp CARET    &kp LS(N0)   &kp LS(N8)  &kp LS(N9)  &kp RA(NUBS)  &none
-   &none  &kp LSFT      &kp NUHS   &kp LS(NUHS) &kp COMMA &kp EXCL        &se_tilde    &kp FSLH     &kp RA(N8)  &kp RA(N9)  &kp LS(N7)    &none
-                                   &none     &trans     &trans            &kp DEL      &trans   &none
+   &none  &se_tilde         &kp EXCL   &kp RA(N2)   &kp PRCNT  &none         &se_circ    &se_tick   &kp LS(NUHS) &kp MINUS   &kp RA(MINUS) &none
+   &none  &tu LALT ESC      &kp RA(N7) &kp RA(N0)   &kp GT     &kp QMARK     &kp LS(N7)  &kp AT     &kp RA(N8)   &kp RA(N9)  &kp LS(N0)    &none
+   &none  &tu LSFT RA(NUBS) &kp NUBS   &kp LS(NUBS) &kp RA(N4) &kp LS(N6)    &kp HASH    &kp NUHS   &kp LS(N8)   &kp LS(N9)  &kp LT        &none
+                                       &none        &trans     &trans        &kp DEL     &trans   &none
                         >;
                 };
 
